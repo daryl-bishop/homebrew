@@ -52,6 +52,11 @@ public class HomeBrewController {
 
 	}
 
+	@GetMapping("/getByName/{name}")
+	public List<Brew> getByName(@PathVariable String name) {
+		return this.service.getByName(name);
+	}
+
 	@GetMapping("/getBrews/{id}")
 	public ResponseEntity<Brew> getBrews(@PathVariable int id) {
 		Brew found = this.service.getBrew(id);
