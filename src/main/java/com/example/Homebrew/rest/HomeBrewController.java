@@ -47,14 +47,15 @@ public class HomeBrewController {
 	}
 
 	@GetMapping("/getByType/{type}")
-	public List<Brew> getByType(@PathVariable String name) {
-		return this.service.getByType(name);
+	public List<Brew> getByType(@PathVariable String type) {
+		return this.service.getByType(type);
 
 	}
 
 	@GetMapping("/getBrews/{id}")
-	public Brew getBrews(@PathVariable int id) {
-		return this.service.getBrew(id);
+	public ResponseEntity<Brew> getBrews(@PathVariable int id) {
+		Brew found = this.service.getBrew(id);
+		return new ResponseEntity<>(found, HttpStatus.ACCEPTED);
 	}
 
 	@PutMapping("/replaceBrew/{id}")

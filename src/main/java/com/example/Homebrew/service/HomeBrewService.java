@@ -20,4 +20,5 @@ public interface HomeBrewService {
 
 	public List<Brew> getByType(String type);
 
+	public List<Brew> getByName(String type);
 }

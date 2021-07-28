@@ -49,4 +49,10 @@ public class HomeBrewServiceList implements HomeBrewService {
 		return null;
 	}
 
+	@Override
+	public List<Brew> getByName(String type) {
+
+		return null;
+	}
+
 }

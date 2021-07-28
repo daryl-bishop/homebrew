@@ -27,6 +27,14 @@ public class Brew {
 		this.brewTime = brewTime;
 	}
 
+	public Brew(String type, String name, int percentage, int brewTime) {
+		super();
+		this.type = type;
+		this.name = name;
+		this.percentage = percentage;
+		this.brewTime = brewTime;
+	}
+
 	public Brew() {
 
 	}
@@ -72,9 +80,9 @@ public class Brew {
 	}
 
 	@Override
-
 	public String toString() {
-		return "Brews[type=" + type + ", name=" + percentage + ", brewTime]";
+		return "Brew [id=" + id + ", type=" + type + ", name=" + name + ", percentage=" + percentage + ", brewTime="
+				+ brewTime + "]";
 	}
 
 	@Override

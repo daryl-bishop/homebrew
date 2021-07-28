@@ -11,4 +11,6 @@ import com.example.Homebrew.rest.Brew;
 public interface HomeBrewRepo extends JpaRepository<Brew, Integer> {
 
 	List<Brew> findByTypeIgnoreCase(String type);
+
+	List<Brew> findByNameIgnoreCase(String type);
 }

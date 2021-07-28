@@ -32,6 +32,11 @@ public class HomeBrewServiceDB implements HomeBrewService {
 	}
 
 	@Override
+	public List<Brew> getByName(String name) {
+		return this.repo.findByNameIgnoreCase(name);
+	}
+
+	@Override
 	public List<Brew> getByType(String type) {
 		return this.repo.findByTypeIgnoreCase(type);
 	}
@@ -49,6 +54,7 @@ public class HomeBrewServiceDB implements HomeBrewService {
 		found.setType(newBrew.getType());
 		found.setName(newBrew.getName());
 		found.setPercentage(newBrew.getPercentage());
+		found.setBrewTime(newBrew.getBrewTime());
 		System.out.println("FOUND AFTER UPDATE: " + found);
 
 		Brew updated = this.repo.save(found);
